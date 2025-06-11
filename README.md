@@ -1,1 +1,36 @@
 # React-APP
+import React from "react";
+
+const categories = [
+  "Cables",
+  "Cable Accessories",
+  "Transformers",
+  "Busway",
+  "Telecom Solution",
+  "Fiber Glass Poles",
+  "EV Charger",
+  "Smart Meters",
+];
+
+const Dashboard = () => {
+  return (
+    <div className="min-h-screen bg-gray-100 p-8">
+      <h1 className="text-3xl font-bold mb-8 text-center">Consultant Resource Dashboard</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {categories.map((category) => (
+          <div key={category} className="bg-white p-6 rounded-2xl shadow-md">
+            <h2 className="text-xl font-semibold mb-4">{category}</h2>
+            <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded w-full mb-2">
+              Download PQ
+            </button>
+            <button className="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded w-full">
+              Open Tool
+            </button>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Dashboard;
